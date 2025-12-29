@@ -1,0 +1,38 @@
+services:
+  vllm:
+    image: vllm/vllm-openai:latest
+    container_name: ktb_vllm
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - /models:/models
+    gpus: all
+    entrypoint: ["vllm"]
+    command:
+      - "serve"
+      - "/models/Qwen3-4B-Instruct"
+      - "--served-model-name"
+      - "qwen3-4b"
+      - "--host"
+      - "0.0.0.0"
+      - "--port"
+      - "8000"
+      - "--max-model-len"
+      - "8192"
+      - "--gpu-memory-utilization"
+      - "0.90"
+
+  agent:
+    image: kaner0529/ktb_agent:local
+    container_name: ktb_agent
+    restart: unless-stopped
+    depends_on:
+      - vllm
+    ports:
+      - "8001:8000"
+    environment:
+      - VLLM_BASE_URL=http://vllm:8000/v1
+      - VLLM_MODEL=qwen3-4b
+      - VLLM_API_KEY=EMPTY
+      - BACKEND_CALLBACK_URL=http://44.198.52.197:5000

@@ -1,0 +1,38 @@
+# Git / IDE / OS
+.git
+.gitignore
+.vscode
+.idea
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Env / secrets
+.env
+*.pem
+*.key
+
+# Logs / outputs
+*.log
+logs/
+tmp/
+
+# Big folders (프로젝트 상황에 맞게 유지/삭제)
+loadtest/
+monitoring/
+ktb_community_backend/
+ktb_community_frontend/
+ktb_community_ai/
+
+# Node (만약 포함될 수 있으면)
+node_modules/
+dist/
+build/
