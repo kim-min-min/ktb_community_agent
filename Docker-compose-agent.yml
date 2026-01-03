@@ -31,8 +31,6 @@ services:
       - vllm
     ports:
       - "8001:8000"
-    environment:
-      - VLLM_BASE_URL=http://vllm:8000/v1
-      - VLLM_MODEL=qwen3-4b
-      - VLLM_API_KEY=EMPTY
-      - BACKEND_CALLBACK_URL=http://44.198.52.197:5000
+    env_file:
+      - .env
+
