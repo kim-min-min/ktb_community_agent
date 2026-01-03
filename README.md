@@ -7,7 +7,7 @@
 블라인드 처리하기 위해 구현된 모더레이션 전용 서비스입니다.
 
 - vLLM 기반 LLM 추론 서버를 사용하여 고속 추론 환경을 구성했으며
-- Qwen3 4B 오픈 파라미터 모델을 활용해 게시글 텍스트를 분석합니다.
+- Qwen3-4B-Instruct-2507 오픈 파라미터 모델을 활용해 게시글 텍스트를 분석합니다.
 - 메인 백엔드와 분리된 독립 Agent 마이크로서비스로 설계되었습니다.
 
 ### 개발 인원 및 기간
@@ -17,7 +17,7 @@
 
 ### 사용 기술 및 tools
 - LLM Inference : vLLM
-- Model : Qwen3-4B-Instruct-2507 (Open Parameter)
+- Model : Qwen3-4B-Instruct-2507
 - Backend API : FastAPI
 - Infra :  Docker, AWS EC2(NVIDIA A10 GPU)
 
@@ -72,7 +72,7 @@
 
 - vLLM 기반 GPU 추론 환경 구성 과정의 어려움
 
-오픈 파라미터 LLM(Qwen3-4B)을 다운로드한 뒤
+오픈 파라미터 LLM(Qwen3-4B-Instruct-2507)을 다운로드한 뒤
 vLLM으로 GPU 추론 서버를 구성하는 과정에서
 단순 모델 실행이 아닌 컨테이너 기반 GPU 추론 환경 설정이 필요했습니다
 
