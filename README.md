@@ -18,7 +18,7 @@
 ### 사용 기술 및 tools
 - LLM Inference : vLLM
 - Model : Qwen3-4B-Instruct-2507
-- Backend API : FastAPI
+- Agent Server : FastAPI + LangChain
 - Infra :  Docker, AWS EC2(NVIDIA A10 GPU)
 
 ### Front-end
