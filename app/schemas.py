@@ -1,12 +1,15 @@
 # app/schemas.py
 from pydantic import BaseModel
 from typing import Optional
+from typing import Literal
 
 class ModerationRequest(BaseModel):
-    post_id: int
+    target_type: Literal["post", "comment"]
+    target_id: int
     content: str
 
 class ModerationResult(BaseModel):
-    post_id: int
-    action: str              # SAFE | HIDDEN | REVIEW
+    target_type: Literal["post", "comment"]
+    target_id: int
+    action: str              # safe | hidden | review
     reason: Optional[str] = None

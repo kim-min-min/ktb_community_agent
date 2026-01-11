@@ -24,7 +24,7 @@ services:
       - "0.90"
 
   agent:
-    image: kaner0529/ktb_agent:local
+    image: kaner0529/ktb_agent:v1
     container_name: ktb_agent
     restart: unless-stopped
     depends_on:
